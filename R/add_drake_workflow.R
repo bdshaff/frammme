@@ -138,7 +138,7 @@ add_drake_workflow = function(FiscalYear = NULL){
     oao_submodel_all = run_submodel_oao(),
     pc_submodel_all = run_submodel_pc(),
     ma_submodel_all = run_submodel_ma(),
-    pi_submodel_all = run_submodel_pi()
+    pi_submodel_all = run_submodel_pi(),
 
     altima_salesmodel = run_salesmodel_altima(
       src_submodel_all,
