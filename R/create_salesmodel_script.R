@@ -78,7 +78,6 @@ create_salesmodel_script = function(NMP = NULL, FiscalYear = NULL, modeling_star
   ######################## LOADING DATA ########################
   ##############################################################
 
-  FMI =
   mmm_data = mmm_load_data(nmp, rgn, in_data_fmi, in_data_kpi)
 
   FMI = mmm_data$FMI
