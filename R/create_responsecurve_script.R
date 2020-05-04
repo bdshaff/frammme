@@ -45,16 +45,16 @@ create_responsecurve_script = function(NMP = NULL, FiscalYear = NULL, modeling_s
   print(NMP)
   print("hey")
   file_path = str_c("modeling/ResponseCurves/",NMP,"/",NAMEPLATE,"-",FiscalYear,".R")
-  
+
   print(file_path)
   file.create(file_path)
-  
+
   script_header =
-    str_c('\n  NAMEPLATE = \"', NAMEPLATE ,'\",
-         \n  NMP = \"', NMP, '\",
-         \n  nmp = \"', nmp, '\",
+    str_c('\n  NAMEPLATE = \"', NAMEPLATE ,'\"
+         \n  NMP = \"', NMP, '\"
+         \n  nmp = \"', nmp, '\"
          \n  FiscalPeriod = \"', FiscalYear, '\"\n')
-  
+
   script_body = '
     in_decomp = here::here("output","SalesModels", NMP, str_c(NAMEPLATE,"-",FiscalPeriod,"-UnnestedDecomp.Rds"))
   out_dest_abc = here::here("modeling","ResponseCurves", NMP, str_c(NAMEPLATE,"-",FiscalPeriod,"-ABC.csv"))
