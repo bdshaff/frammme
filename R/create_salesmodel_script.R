@@ -42,21 +42,21 @@ create_salesmodel_script = function(NMP = NULL, FiscalYear = NULL, modeling_star
     print(NMP)
     message("need to configure")
   }
-  
+
   file_path = str_c("modeling/SalesModels/",NMP,"/",NAMEPLATE,"-",FiscalYear,".R")
-  
+
   print(file_path)
   file.create(file_path)
-  
+
   script_header =
-    str_c('\n  NAMEPLATE = \"', NAMEPLATE ,'\",
-         \n  NMP = \"', NMP, '\",
-         \n  nmp = \"', nmp, '\",
-         \n  rgn = c("CR","MAR","MTN","MWR","NER","NWR","SER","WR"),
-         \n  modeling_start_date = \"', modeling_start_date, '\",
-         \n  modeling_end_date = \"', modeling_end_date, '\",
+    str_c('\n  NAMEPLATE = \"', NAMEPLATE ,'\"
+         \n  NMP = \"', NMP, '\"
+         \n  nmp = \"', nmp, '\"
+         \n  rgn = c("CR","MAR","MTN","MWR","NER","NWR","SER","WR")
+         \n  modeling_start_date = \"', modeling_start_date, '\"
+         \n  modeling_end_date = \"', modeling_end_date, '\"
          \n  FiscalPeriod = \"', FiscalYear, '\"\n')
-  
+
   script_body = '
 
   out_dest_decomp = here::here("modeling","SalesModels", NMP, str_c(NAMEPLATE,"-",FiscalPeriod,"-Decomp.csv"))
