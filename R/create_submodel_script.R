@@ -45,12 +45,12 @@ create_submodel_script = function(SBM = NULL, NMP = NULL, FiscalYear = NULL, mod
     print(NMP)
     message("need to configure")
   }
-  
+
   file_path = str_c("modeling/SubModels/", SBM,"/", FiscalYear,"-AllModels","/", SBM,"-",FiscalYear,".R")
-  
+
   print(file_path)
   file.create(file_path)
-  
+
   script_header =
     str_c('\n  NAMEPLATE = \"', NAMEPLATE ,'\"
          \n  NMP = \"', NMP, '\"
@@ -60,11 +60,11 @@ create_submodel_script = function(SBM = NULL, NMP = NULL, FiscalYear = NULL, mod
          \n  modeling_start_date = \"', modeling_start_date, '\"
          \n  modeling_end_date = \"', modeling_end_date, '\"
          \n  FiscalPeriod = \"', FiscalYear, '\"\n')
-  
+
   script_body = '
 
   out_dest_contrib_table = here::here("modeling","SubModels",SBM,str_c(FiscalPeriod,"-AllModels"),str_c(SBM,"-",FiscalPeriod,"-Decomp.csv"))
-  out_dest_contrib = here::here("output","SubModels",SBM,"all-SRC.Rds")
+  out_dest_contrib = here::here("output","SubModels",SBM,str_c("all-",SBM,".Rds"))
   in_data_fmi = here::here("data","processed_data", "2020-02-27_FY18P6NissanModelingFMI.csv")
   in_data_kpi = here::here("data","processed_data", "2020-03-02_FY18P6NissanModelingKPI.csv")
 
@@ -185,8 +185,8 @@ create_submodel_script = function(SBM = NULL, NMP = NULL, FiscalYear = NULL, mod
   message("12 - Submodel Contributions Saved To:")
   print(out_dest_contrib)
   '
-  
+
   script = str_c(script_header, script_body)
   write(script, file = file_path, append = TRUE)
-  
+
 }
