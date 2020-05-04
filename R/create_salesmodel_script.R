@@ -89,7 +89,9 @@ create_salesmodel_script = function(NMP = NULL, FiscalYear = NULL, modeling_star
   ################## DEFINE THE MODEL STRING ###################
   ##############################################################
 
-  stringformatPanel_Div = str_squish("")
+  stringformatPanel_Div = str_squish("ttn_sales_div_tiv<D>ttn_sales_div_tiv_MEANSBY ~
+                                     ttn_pi_Log_Lag1 +
+                                     ttn_pnur<D>ttn_msrp")
 
   message(str_c("6 - ", NAMEPLATE, "  Model String Defined AS:"))
   print(stringformatPanel_Div)
