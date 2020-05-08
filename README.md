@@ -3,7 +3,8 @@ Functions to Generate an MMM Project Framework
 
 # Example
 
-`library(frammme)
+```
+library(frammme)
 
 
 create_mmm_project(path = "~/Desktop/",
@@ -13,4 +14,4 @@ create_mmm_project(path = "~/Desktop/",
                    add_drake_workflow = TRUE,
                    open_proj = TRUE,
                    init_packrat = FALSE)
-                   `
+```
