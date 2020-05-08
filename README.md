@@ -23,7 +23,7 @@ create_mmm_project(path = "~/Desktop/",
 The result of the call to `create_mmm_project` creates a directory with the following directory tree.
 Model scripts are automatically added and ready for execution via the helper functions `create_submodel_script`, `create_salesmodel_script`, and `create_responsecurve_script`.
 
-```
+```r
 .
 ├── FY19-Modeling.Rproj
 ├── R
