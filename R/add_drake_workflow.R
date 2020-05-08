@@ -9,7 +9,7 @@ add_drake_workflow = function(FiscalYear = NULL){
     library(here)
 
     source(here::here("drake_workflow","wR","packages.R"))
-    source(here::here("drake_workflow","wR","functions.R"))
+    source(here::here("drake_workflow","wR","script_functions.R"))
     source(here::here("drake_workflow","wR","load_fit_curves.R"))
     source(here::here("drake_workflow","wR","plan.R"))
 
@@ -21,7 +21,7 @@ add_drake_workflow = function(FiscalYear = NULL){
     '
     write(script_body_make, file ="drake_workflow/make.R", append = TRUE)
 
-    file.create("drake_workflow/wR/functions.R")
+    file.create("drake_workflow/wR/script_functions.R")
     script_body_functions = '
     FiscalYear = "FY19"
 
@@ -128,7 +128,7 @@ add_drake_workflow = function(FiscalYear = NULL){
     run_respcurve_versa = code_to_function(here::here("modeling","ResponseCurves","VER",
                                                       stringr::str_c("Versa-",FiscalYear,".R")))
     '
-    write(script_body_functions, file ="drake_workflow/wR/functions.R", append = TRUE)
+    write(script_body_functions, file ="drake_workflow/wR/script_functions.R", append = TRUE)
 
     file.create("drake_workflow/wR/plan.R")
     script_body_plan = '
@@ -294,9 +294,14 @@ add_drake_workflow = function(FiscalYear = NULL){
     library(magrittr)
 
     source(here::here("R","Source_StringModelV9_BDS2.R"))
-    source(here::here("R","Decomp_RCready_V5.r"))
     source(here::here("R","my_ABCsReachGen.R"))
-    source(here::here("R","ResponseCurveFunctions.R"))
+    source(here::here("R","contributions.R"))
+    source(here::here("R","contributionsADD.R"))
+    source(here::here("R","exportREGCoeff.R"))
+    source(here::here("R","unwind.R"))
+
+    source(here::here("R","rc_generate.R"))
+    source(here::here("R","rc_revise_variable_name.R"))
 
     source(here::here("R","mmm_load_data.R"))
     source(here::here("R","mmm_load_submodel.R"))
