@@ -8,7 +8,7 @@ The main function of this package is `create_mmm_project` which takes parameters
 This example creates an MMM modeling project directory at the location pointed to by the `path` argument.
 The `add_drake_workflow` adds a subdirectory with a drake workflow set up for execution.
 
-```{r}
+```r
 library(frammme)
 
 create_mmm_project(path = "~/Desktop/",
