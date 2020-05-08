@@ -1,3 +1,17 @@
+#' Creat an MMM Project
+#'
+#' @param path - path to location where project folder should be created.
+#' @param FiscalYear - string specifying the fiscal period for the project.
+#' @param modeling_start_date - yyyy-mm-dd fromat string.
+#' @param modeling_end_date - yyyy-mm-dd fromat string.
+#' @param add_drake_workflow - logical. should a drake workflow subdirectory be created.
+#' @param open_proj - logical. should the Rstudio project be opened when created.
+#' @param init_packrat - logical. should a packrat folder be initiated automatically.
+#'
+
+
+
+
 create_mmm_project = function(path = "~/Desktop/", FiscalYear = NULL,
                               modeling_start_date = NULL, modeling_end_date = NULL,
                               add_drake_workflow = TRUE,
