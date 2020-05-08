@@ -1,11 +1,15 @@
 # Framework for MMM projects (frammme)
-Functions to Generate an MMM Project Framework
+Functions to Generate an MMM Project Framework.
+
+The main function of this package is `create_mmm_project` which takes parameters as arguments and creates a folder with an RStudio project following the MMM modeling framework.
 
 # Example
 
+This example creates an MMM modeling project directory at the location pointed to by the `path` argument.
+The `add_drake_workflow` adds a subdirectory with a drake workflow set up for execution.
+
 ```{r}
 library(frammme)
-
 
 create_mmm_project(path = "~/Desktop/",
                    FiscalYear = "FY19",
@@ -16,7 +20,8 @@ create_mmm_project(path = "~/Desktop/",
                    init_packrat = FALSE)
 ```
 
-Result
+The result of the call to `create_mmm_project` creates a directory with the following directory tree.
+Model scripts are automatically added and ready for execution via the helper functions `create_submodel_script`, `create_salesmodel_script`, and `create_responsecurve_script`.
 
 ```
 .
@@ -144,3 +149,14 @@ Result
         ├── PI
         └── SRC
 ```
+
+# Next Steps
+
+1)	Initiate the Project 
+    a.	Initiate a git repository
+2)	Add the data
+3)	Add the R code
+4)	Initiate packrat
+5)	Adjust Strings in sub-models
+6)	Add variable categorizations to each sales-model folder
+7)	Adjust Strings in sales-models
