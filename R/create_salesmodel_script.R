@@ -18,7 +18,7 @@ create_salesmodel_script = function(NMP = NULL, FiscalYear = NULL, modeling_star
     NAMEPLATE = "LEAF"
     nmp = "lef"
   }else if(NMP == "RGE"){
-    NAMEPLATE = "ROGUE"
+    NAMEPLATE = "Rogue"
     nmp = "rge"
   }else if(NMP == "RGS"){
     NAMEPLATE = "RogueSport"

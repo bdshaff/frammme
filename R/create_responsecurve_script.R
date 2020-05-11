@@ -18,7 +18,7 @@ create_responsecurve_script = function(NMP = NULL, FiscalYear = NULL, modeling_s
     NAMEPLATE = "LEAF"
     nmp = "lef"
   }else if(NMP == "RGE"){
-    NAMEPLATE = "ROGUE"
+    NAMEPLATE = "Rogue"
     nmp = "rge"
   }else if(NMP == "RGS"){
     NAMEPLATE = "RogueSport"
