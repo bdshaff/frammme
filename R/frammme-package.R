@@ -7,5 +7,5 @@
 #' @section Functions:
 #'
 #' @docType package
-#' @name framme
+#' @name frammme
 NULL
