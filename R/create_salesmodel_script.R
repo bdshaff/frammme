@@ -64,6 +64,7 @@ create_salesmodel_script = function(NMP = NULL, FiscalYear = NULL, modeling_star
 
   in_data_fmi = here::here("data","processed_data", "FMI.csv")
   in_data_kpi = here::here("data","processed_data", "KPI.csv")
+  in_var_cat = here::here("data","categorization","StandardizedVariableCategorization.xlsx")
 
 
   ##############################################################
@@ -132,19 +133,19 @@ create_salesmodel_script = function(NMP = NULL, FiscalYear = NULL, modeling_star
   ##############################################################
 
   setwd(here::here("modeling","SalesModels", NMP))
-  # exportREGCoeff(Formula = stringformatPanel_Div,
-  #                DF = DF_Panel_Div,
-  #                Panel = 8,
-  #                model = model_Div,
-  #                nameDF = "n_Titan-FY18P6",
-  #                kpi_var = "ttn_sales")
+  exportREGCoeff(Formula = stringformatPanel_Div,
+                 DF = DF_Panel_Div,
+                 Panel = 8,
+                 model = model_Div,
+                 nameDF = str_c(NAMEPLATE, "-", FiscalPeriod),
+                 kpi_var = str_c(nmp,"_sales"))
 
   ##############################################################
   ################### COMPUTE CONTRIBUTIONS ####################
   ##############################################################
 
   Sales_div = contributionsADD(reg_name = str_c(NAMEPLATE, "-", FiscalPeriod),
-                               cat_table = str_c(NAMEPLATE, "-Variable-Categorization.xlsx"),
+                               cat_table = in_var_cat,
                                aggregation_period = "FiscalYear",
                                FY_Begins = 4,
                                min_ref = c(),
