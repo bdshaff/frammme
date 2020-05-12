@@ -74,7 +74,7 @@ create_submodel_script = function(SBM = NULL, NMP = NULL, FiscalYear = NULL, mod
 
 
   print("")
-  message("1 - SEARCH SUB MODEL SCRIPT RUN INITIATED")
+  message(str_c("1 - ", SBM," SUB MODEL SCRIPT RUN INITIATED"))
 
   options(scipen = 999, digits = 4)
 
