@@ -65,8 +65,8 @@ create_submodel_script = function(SBM = NULL, NMP = NULL, FiscalYear = NULL, mod
 
   out_dest_contrib_table = here::here("modeling","SubModels",SBM,str_c(FiscalPeriod,"-AllModels"),str_c(SBM,"-",FiscalPeriod,"-Decomp.csv"))
   out_dest_contrib = here::here("output","SubModels",SBM,str_c("all-",SBM,".Rds"))
-  in_data_fmi = here::here("data","processed_data", "2020-02-27_FY18P6NissanModelingFMI.csv")
-  in_data_kpi = here::here("data","processed_data", "2020-03-02_FY18P6NissanModelingKPI.csv")
+  in_data_fmi = here::here("data","processed_data", "FMI.csv")
+  in_data_kpi = here::here("data","processed_data", "KPI.csv")
 
   ##############################################################
   ########################### START ############################

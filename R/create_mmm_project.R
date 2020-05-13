@@ -9,9 +9,6 @@
 #' @param init_packrat - logical. should a packrat folder be initiated automatically.
 #'
 
-
-
-
 create_mmm_project = function(path = "~/Desktop/", FiscalYear = NULL,
                               modeling_start_date = NULL, modeling_end_date = NULL,
                               add_drake_workflow = TRUE,
@@ -36,6 +33,11 @@ create_mmm_project = function(path = "~/Desktop/", FiscalYear = NULL,
   }else{
     dir.create(dir_loc)
     setwd(dir_loc)
+  }
+
+  usethis::create_project(path = dir_loc, open = open_proj, rstudio = TRUE)
+  if(init_packrat == TRUE){
+    packrat::init()
   }
 
   if(!dir.exists("modeling")){
@@ -115,8 +117,4 @@ create_mmm_project = function(path = "~/Desktop/", FiscalYear = NULL,
     add_drake_workflow()
   }
 
-  usethis::create_project(path = dir_loc, open = open_proj, rstudio = TRUE)
-  if(init_packrat == TRUE){
-    packrat::init()
-  }
 }
