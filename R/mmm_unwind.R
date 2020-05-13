@@ -1,4 +1,4 @@
-unwind <-function(model1,model2,use_model2_panel="ALL",print_summary=TRUE,expandPeriodToLongest=FALSE,demo=FALSE){
+mmm_unwind  = function(model1, model2, use_model2_panel = "ALL", print_summary = TRUE, expandPeriodToLongest = FALSE, demo = FALSE){
   Base="ModelKPI"
   # REMOVED: Base This parameter controls how the variable is unnested,  only change this if you wish the base from the model2 to be unnested as BASE and not as the variable
   options("scipen"=100, "digits"=4)
