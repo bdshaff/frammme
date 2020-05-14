@@ -120,7 +120,7 @@ create_mmm_project = function(path = "~/Desktop/", FiscalYear = NULL,
   }
 
   if(add_drake_workflow == TRUE){
-    add_drake_workflow()
+    add_drake_workflow(FiscalYear = FiscalYear)
   }
 
 }

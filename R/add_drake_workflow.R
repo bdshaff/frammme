@@ -21,8 +21,9 @@ vis_drake_graph(plan, targets_only = TRUE)
     write(script_body_make, file ="drake_workflow/make.R", append = TRUE)
 
     file.create("drake_workflow/wR/script_functions.R")
+
+    script_header_functions = str_c('\n  FiscalYear = \"', FiscalYear, '\"\n')
     script_body_functions = '
-    FiscalYear = "FY19"
 
     run_submodel_pi = code_to_function(here::here("modeling","SubModels","PI",
                                                   stringr::str_c(FiscalYear,"-AllModels"),
@@ -127,7 +128,8 @@ vis_drake_graph(plan, targets_only = TRUE)
     run_respcurve_versa = code_to_function(here::here("modeling","ResponseCurves","VER",
                                                       stringr::str_c("Versa-",FiscalYear,".R")))
     '
-    write(script_body_functions, file ="drake_workflow/wR/script_functions.R", append = TRUE)
+    script_functions = str_c(script_header_functions, script_body_functions)
+    write(script_functions, file ="drake_workflow/wR/script_functions.R", append = TRUE)
 
     file.create("drake_workflow/wR/plan.R")
     script_body_plan = '
