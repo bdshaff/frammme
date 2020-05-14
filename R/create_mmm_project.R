@@ -14,9 +14,15 @@ create_mmm_project = function(path = "~/Desktop/", FiscalYear = NULL,
                               add_drake_workflow = TRUE,
                               open_proj = TRUE,
                               init_packrat = FALSE){
-  require(stringr)
+  require(drake)
+  require(tidyverse)
   require(usethis)
   require(here)
+  require(OneStepBrandScience)
+  require(decompR)
+  require(frammme)
+  require(mmmlegacy)
+  require(mmmactive)
 
   if(!dir.exists(path)){
     stop(stringr::str_c(path," doesn't exist. Please specify a valid path to directory."))
