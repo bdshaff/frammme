@@ -98,21 +98,7 @@ create_submodel_script = function(SBM = NULL, NMP = NULL, FiscalYear = NULL, mod
   ################## DEFINE THE MODEL STRING ###################
   ##############################################################
 
-
-  stringformatPanel_Div = str_squish("{search<D>search_MEANSBY}_Log ~
-                                         aa_Log_Lag1 +
-                                         ma_Log_Lag4 +
-                                         total_digital_direct_t1_E1R1P56D10 +
-                                         social_display_direct_t1_E1R1P56D10 +
-                                         tv_direct_t1_E1R0P56D10 +
-                                         digital_totalmbr_direct_t2_E6R6P56D10 +
-                                         addressabletv_direct_t1_E4R4P07D10 +
-                                         DUM_2017_03_01 +
-                                         DUM_2019_02_01 +
-                                         mbr_tv_direct_t1_E4R4P42D10 +
-                                         mbr_streaming_direct_t1_E4R4P56D10 +
-                                         social_display_direct_t2_E8R4P07D10")
-
+  stringformatPanel_Div = readRDS(here::here("modeling","ModelStrings",str_c(tolower(SBM),"-model-string.Rds")))
 
   message("7 - Model String Defined AS:")
   print(stringformatPanel_Div)
