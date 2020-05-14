@@ -49,6 +49,8 @@ create_mmm_project = function(path = "~/Desktop/", FiscalYear = NULL,
   if(!dir.exists("modeling")){
     dir.create("modeling")
 
+    dir.create("modeling/ModelStrings")
+
     dir.create("modeling/SubModels")
     sbms = c("KBA","MA","OAO","PC","PI","SRC")
     for(sbm in sbms){
