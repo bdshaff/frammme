@@ -51,6 +51,7 @@ mod_obj =
   SetDateRange() %>%
   Run_Model()
 
+Plot_Resids(mod_obj, panel_name = "all")
 
 ##############################################################
 ################## EXPORT AND SAVE RESULTS ###################
