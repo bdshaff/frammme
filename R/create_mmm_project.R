@@ -49,7 +49,7 @@ create_mmm_project <- function(path = "~/Desktop/", FiscalYear = NULL,
   if (!dir.exists("modeling")) {
     dir.create("modeling")
 
-    #dir.create("modeling/ModelStrings")
+    dir.create("modeling/ModelStrings")
 
     dir.create("modeling/SubModels")
     sbms <- c("KBA", "MA", "OAO", "PC", "PI", "SRC")
@@ -135,7 +135,7 @@ create_mmm_project <- function(path = "~/Desktop/", FiscalYear = NULL,
     dir.create("R")
   }
 
-  if (dir.exists("R") & FALSE) { #disabling this for now
+  if (dir.exists("R")) {
     print("R/model_strings.R")
     file.create("R/model_strings.R")
     script <- '

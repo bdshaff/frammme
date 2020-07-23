@@ -31,7 +31,7 @@ input_files <-
   )
 
 input_file_ModelSetup <- here::here("modeling", "SalesModels", str_c(NMP, "-Bayes"), "input", str_c(nmp, "-ModelSetup.csv"))
-input_file_ModelSpec <- here::here("modeling", "SalesModels", str_c(NMP, "-Bayes"), "input", str_c(nmp, "-ModelSpec2.csv"))
+input_file_ModelSpec <- here::here("modeling", "SalesModels", str_c(NMP, "-Bayes"), "input", str_c(nmp, "-ModelSpec.csv"))
 
 out_dest_mod_obj <- here::here("output", "SalesModels", str_c(NMP, "-Bayes"), str_c(NAMEPLATE, "-", FiscalPeriod, "-mod_obj.Rds"))
 
