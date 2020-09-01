@@ -4,7 +4,7 @@ mmm_load_submodel = function(nmp, submodel){
     segment = "truck"
   }else if(nmp %in% c("alt", "lef", "sen", "ver", "max")){
     segment = "sedan"
-  }else if(nmp %in% c("arm", "mur", "rge", "rgs", "pth")){
+  }else if(nmp %in% c("arm", "mur", "rge", "rgs", "pth","kcs")){
     segment = "suv"
   }
 
